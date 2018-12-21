@@ -205,7 +205,7 @@ export default {
     totalDividend (totalStaked, earningsPerShare) {
       const totalDividend = parseFloat(totalStaked) * (parseInt(earningsPerShare.substr(2).match(/.{1,2}/g).reverse().join(''), 16).div(4294967296) || 0)
       return totalDividend.toDecimal(8) ? totalDividend.toDecimal(8) + ' CMU' : '0.00000000 CMU'
-    },
+    }
     myDividend (earningsPerShare, staked, payout) {
       // 我已领取的分红 payout
       const totalDividend = parseFloat(staked) * (parseInt(earningsPerShare.substr(2).match(/.{1,2}/g).reverse().join(''), 16).div(4294967296) || 0) - (parseInt(payout) / 10000)
